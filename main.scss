@@ -1,0 +1,265 @@
+@import '_mixin';
+
+:root{
+    /* Colores */
+    --color-primario:black;
+    --color-secundario:#f0f0f0;
+
+    /* Tipografía */
+    --tipo-principal: helvetica, arial, sans-serif;
+    --tipo-secundaria: verdana;
+}
+
+/* Adaptamos al modo oscuro */
+
+@media (prefers-color-scheme: dark) {
+    :root{
+        --color-primario:#f0f0f0;
+        --color-secundario:black;
+    }
+}
+
+/* Modo alto contraste */
+@media (prefers-contraste: high) {
+    :root{
+        --color-primario:black;
+        --color-secundario:white;
+    }
+}
+
+/* Sin animaciones si el usuario activó esa opción */
+@media (prefers-reduced-motion: reduce) {
+    *{
+        animation: none;
+        transition: none;
+    }
+}
+
+/* Reset Margins y Paddings de todas las etiquetas */
+*{
+    margin:0;
+    padding:0;
+    border: 0;
+    box-sizing: border-box;
+    vertical-align: baseline;
+}
+/* Evitar problemas con la imagenes */
+img, picture, video, iframe, figure{
+    max-width: 100%;
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center center;
+}
+/* resteo para enlaces que funcionen como caja... */
+a{
+    display: block;
+}
+/* ...excepto los que se encuentran en párrafos */
+p a{
+    display: inline;
+}
+/* Quitamos todos los puntos de los <li> */
+li{
+    list-style-type: none;
+}
+/* Configuramos anclas suaves */
+html{
+    scroll-behavior: smooth;
+}
+/* Desactivamos estilos por defecto en las principales etiquetas de texto */
+h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em{
+   font-size: 1em;
+    font-weight: inherit;
+    font-style: inherit;
+    text-decoration: none;
+    color: inherit; 
+}
+/* Evitamos problemas con los pseudoelemntos de quotes */
+blockquote::before, blockquote::after, q:before, q:after{
+    content: '';
+    content: none;
+}
+/* configuramos el texto que selccionamos */
+::selection{
+    background-color: var(--color-primario);
+    color: var(--color-secundario);
+}
+/* nivelamos probelmas de tipografias y colocacion de formularios */
+form, imput, textarea, select, button, label, input, select{
+    font-family: inherit;
+    font-size: inherit;
+    hyphens: auto;
+    background-color: transparent;
+    display: block;
+    color: inherit;
+}
+/* Reseteamos las tablas */
+table, tr, td{
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+/* Evitar problemas con los svg */
+svg{
+    width: 100%;
+    display: block;
+    fill: currentColor;
+}
+/* Configuramos la tipografia de toda la web */
+body{
+    min-height: 100vh;
+    font-size: 100%;
+    font-family: var(--tipo-principal);
+    color: var(--color-primario);
+    background-color: var(--color-secundario);
+    /* line-height:1.4em;
+    hyphens: auto;
+    font-smooth: always;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; */
+}
+
+.header{
+    width: 100%;
+    background-color: #282828;
+    padding: 1em;
+    color: white;
+    
+    z-index: 1;
+
+    @include flex (row, wrap, space-between, center);
+
+    &_h1{
+        width: 10em;
+
+    }
+    &img{
+        width: 2em;
+    }
+
+    &_button{
+
+        display: none;
+
+        @include media (){
+            display: block;
+        }
+        cursor: pointer;
+    }
+    &_svg{
+        width: 2em;
+        height: 2em;
+        fill: white;
+
+    }
+
+    &_nav{
+     
+
+        @include media(){
+            width: 100%;           
+            @include flex (column, nowrap, center, center);
+            opacity: 0;
+            height: 0vh;
+            overflow: hidden;
+            transition: all .5s ease;
+            
+
+            &--activo{
+                display: flex;
+                opacity: 1;
+                height: 50vh;
+
+            }
+        }
+}
+    &_ul{
+        @include flex (row, nowrap, flex-end, center);
+
+        @include media(){
+            flex-direction: column;
+        }
+        
+    }
+    &_li{
+        margin: 0.5em;
+        @include media (){
+            margin: 0.3em 0;
+        }
+    }
+}
+
+.main{
+    @include flex (column, nowrap, center, center);
+
+    & .main_portada{
+        width: 100%;
+        height: 75vh;
+        object-fit: cover;
+        object-position: center center;
+        display: block;
+    
+        
+    }
+    &_h1{
+        font-family: var(--tipo-principal);
+        font-size: 1.5em;
+        padding: 1em;
+        font-weight: 700;
+        text-align: center;
+    }
+    &_p{
+        font-family: var(--tipo-secundaria);
+        font-size: 1em;
+        font-weight: 300;
+        margin: 0 0.5em;
+        text-align: justify
+    }
+    & .h2{
+        font-family: var(--tipo-secundaria);
+        font-size: 1.5em;
+        padding: 1em;
+        font-weight: 700;
+        text-align: center;
+    
+    }
+    & .container{
+        width: 100%;
+        
+        & .galeria{
+            width: 100%;
+            margin: auto;
+            @include grid (3, 1em);
+
+            & .imagen{
+                height: auto;
+                }
+            }
+        }
+        & .container_servicios{ 
+            @include grid (3, 1fr);
+            color: black;
+            text-align: center;
+                & .card{
+                margin: 0 4em;
+                }
+                & img{
+                    
+                }
+                & .card__body{
+                    
+                    
+                }
+                    & .card__text{
+                    
+                        
+                }
+            }
+
+        
+
+    
+
+    }
+    
+    
