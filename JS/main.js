@@ -25,7 +25,13 @@ const habitacionSuite = new Habitaciones('Suite', 4500);
 
 const habitHotel = [habitacionSimple, habitacionDoble, habitacionTriple, habitacionSuite];
 
-function selHabit() {
+const botonReserva = document.getElementById("reserva__portada")
+botonReserva.onclick = function(){
+  let saludo = prompt("Bienvenido al Hotel BuenaVista, cual es su nombre?");
+  let nombre = alert("Muchas gracias por elegirnos " + saludo);
+  let habitaciones = prompt("Por favor, seleccione una habitación: " + habitHotel[0].tipo + ", " + habitHotel[1].tipo + ", " + habitHotel[2].tipo + ", " + habitHotel[3].tipo);
+  let noche = prompt("Por favor, seleccione la cantidad de noches que desea hospedarse");
+  
   if (habitaciones == habitHotel[0].tipo) {
     alert("Su habitación es: " + habitacionSimple.tipo + " y el precio es: " + habitacionSimple.precio * noche);  
   }
@@ -40,16 +46,6 @@ function selHabit() {
   }else {
     alert("Por favor, seleccione una habitación válida");
   }
-}
 
-let saludo = prompt("Bienvenido al Hotel BuenaVista, cual es su nombre?");
-let nombre = alert("Muchas gracias por elegirnos " + saludo);
-let habitaciones = prompt("Por favor, seleccione una habitación: " + habitHotel[0].tipo + ", " + habitHotel[1].tipo + ", " + habitHotel[2].tipo + ", " + habitHotel[3].tipo);
-let noche = prompt("Por favor, seleccione la cantidad de noches que desea hospedarse");
-
-while (habitaciones == habitHotel[0].tipo | habitaciones == habitHotel[1].tipo | habitaciones == habitHotel[2].tipo | habitaciones == habitHotel[3].tipo) {
-  selHabit();
   let despedida = alert("Muchas gracias por elegirnos, que disfrutes tu estadía " + saludo);
-  break
 }
- 

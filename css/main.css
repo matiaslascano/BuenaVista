@@ -267,14 +267,42 @@ body {
           align-items: center;
 }
 
-.main .main_portada {
-  width: 100%;
+.main .portada {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   height: 75vh;
+}
+
+.main .portada .main__portada {
+  width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center center;
      object-position: center center;
   display: block;
+}
+
+.main .portada #reserva__portada {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  background: rgba(240, 240, 240, 0.5);
+  color: #000000;
+  top: 50%;
+  left: 50%;
+  padding: 15px;
+  border: #282828 solid 1px;
+  border-radius: 1em;
+  font-size: 2em;
+  -webkit-transition: all ease 0.3s;
+  transition: all ease 0.3s;
+}
+
+.main .portada #reserva__portada:hover {
+  background-color: #000000;
+  color: #f0f0f0;
 }
 
 .main_h1 {

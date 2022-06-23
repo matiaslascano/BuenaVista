@@ -191,16 +191,37 @@ body{
 
 .main{
     @include flex (column, nowrap, center, center);
-
-    & .main_portada{
-        width: 100%;
+    & .portada{
+        display: flex;
         height: 75vh;
-        object-fit: cover;
-        object-position: center center;
-        display: block;
-    
-        
+        & .main__portada{
+            width: 100%;
+            object-fit: cover;
+            object-position: center center;
+            display: block;            
+        }
+        & #reserva__portada{
+            display: flex;
+            position: absolute;
+            background: rgba($color: #f0f0f0, $alpha: .5);
+            color: #000000;
+            top: 50%;
+            left: 50%;
+            padding: 15px;
+            border: #282828 solid 1px;
+            border-radius: 1em;
+            font-size: 2em;
+            transition: all ease 0.3s;
+            &:hover{
+                background-color: #000000;
+                color: #f0f0f0;
+            }
+            
+            
+            
+        }
     }
+  
     &_h1{
         font-family: var(--tipo-principal);
         font-size: 1.5em;
@@ -254,12 +275,8 @@ body{
                     
                         
                 }
-            }
+        }
 
-        
-
-    
-
-    }
+}
     
     
