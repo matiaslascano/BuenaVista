@@ -130,8 +130,8 @@ body {
   min-height: 100vh;
   font-size: 100%;
   font-family: var(--tipo-principal);
-  color: var(--color-primario);
-  background-color: var(--color-secundario);
+  color: #dad5b7;
+  background-color: #243757;
   /* line-height:1.4em;
     hyphens: auto;
     font-smooth: always;
@@ -139,9 +139,21 @@ body {
     -moz-osx-font-smoothing: grayscale; */
 }
 
+/* .color1 { #243757 };
+.color2 { #3a5f6f };
+.color3 { #dad5b7 };
+.color4 { #c2b79b };
+.color5 { #665e52 }; */
 .header {
+  position: fixed;
   width: 100%;
-  background-color: #282828;
+  background: rgba(0, 0, 0, 0.1);
+  /*   border-radius: 16px; */
+  -webkit-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  /* border: 1px solid rgba(255, 255, 255, 0.3); */
   padding: 1em;
   color: white;
   z-index: 1;
@@ -242,6 +254,7 @@ body {
 }
 
 .header_li {
+  text-shadow: #000000;
   margin: 0.5em;
 }
 
@@ -375,4 +388,69 @@ body {
 
 .main .container_servicios .card {
   margin: 0 4em;
+}
+
+.main form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 90%;
+  gap: 1em;
+}
+
+.main form .formInactivo {
+  display: none;
+}
+
+.main form #nombre {
+  text-align: center;
+  border-radius: 50px;
+  background: #243757;
+  -webkit-box-shadow: 20px 20px 60px #1c2a43, -20px -20px 60px #2c446b;
+          box-shadow: 20px 20px 60px #1c2a43, -20px -20px 60px #2c446b;
+}
+
+.main form #habitaciones_lista {
+  border-radius: 50px;
+  background: #243757;
+  -webkit-box-shadow: 20px 20px 60px #1c2a43, -20px -20px 60px #2c446b;
+          box-shadow: 20px 20px 60px #1c2a43, -20px -20px 60px #2c446b;
+}
+
+.main form option {
+  text-align: center;
+  border-radius: 50px;
+  background: #243757;
+  -webkit-box-shadow: 20px 20px 60px #1c2a43, -20px -20px 60px #2c446b;
+          box-shadow: 20px 20px 60px #1c2a43, -20px -20px 60px #2c446b;
+}
+
+.main form #noches {
+  text-align: center;
+  border-radius: 50px;
+  background: #243757;
+  -webkit-box-shadow: 20px 20px 60px #1c2a43, -20px -20px 60px #2c446b;
+          box-shadow: 20px 20px 60px #1c2a43, -20px -20px 60px #2c446b;
+}
+
+.main form #email {
+  text-align: center;
+  border-radius: 50px;
+  background: #243757;
+  -webkit-box-shadow: 20px 20px 60px #1c2a43, -20px -20px 60px #2c446b;
+          box-shadow: 20px 20px 60px #1c2a43, -20px -20px 60px #2c446b;
+}
+
+.main form #botonReserva {
+  margin: auto;
+  width: 8em;
+  height: 2em;
+  border-radius: 50px;
+  background: #374d72;
+  -webkit-box-shadow: 20px 20px 60px #1c2a43, -20px -20px 60px #2c446b;
+          box-shadow: 20px 20px 60px #1c2a43, -20px -20px 60px #2c446b;
 }

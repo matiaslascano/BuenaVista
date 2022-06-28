@@ -110,8 +110,8 @@ body{
     min-height: 100vh;
     font-size: 100%;
     font-family: var(--tipo-principal);
-    color: var(--color-primario);
-    background-color: var(--color-secundario);
+    color: #dad5b7 ;
+    background-color: #243757;
     /* line-height:1.4em;
     hyphens: auto;
     font-smooth: always;
@@ -119,9 +119,22 @@ body{
     -moz-osx-font-smoothing: grayscale; */
 }
 
+
+/* .color1 { #243757 };
+.color2 { #3a5f6f };
+.color3 { #dad5b7 };
+.color4 { #c2b79b };
+.color5 { #665e52 }; */
+
 .header{
+    position: fixed;
     width: 100%;
-    background-color: #282828;
+    background: rgba(0,0,0, 0.1);
+  /*   border-radius: 16px; */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    /* border: 1px solid rgba(255, 255, 255, 0.3); */
     padding: 1em;
     color: white;
     
@@ -182,6 +195,7 @@ body{
         
     }
     &_li{
+        text-shadow: #000000;
         margin: 0.5em;
         @include media (){
             margin: 0.3em 0;
@@ -276,7 +290,66 @@ body{
                         
                 }
         }
+    & form{
+        display: flex;
+        flex-direction: column;
 
+        width: 90%;
+        gap: 1em;
+
+        & .formInactivo{
+            display: none;
+        }
+        & #nombre{
+
+            text-align: center;
+           border-radius: 50px;
+            background: #243757;
+            box-shadow:  20px 20px 60px #1c2a43,
+             -20px -20px 60px #2c446b;
+        }
+        & #habitaciones_lista{
+           border-radius: 50px;
+            background: #243757;
+            box-shadow:  20px 20px 60px #1c2a43,
+             -20px -20px 60px #2c446b;
+
+        }
+            & option{
+                text-align: center;
+               border-radius: 50px;
+                background: #243757;
+                box-shadow:  20px 20px 60px #1c2a43,
+             -20px -20px 60px #2c446b;
+
+            }
+        & #noches{
+            text-align: center;
+           border-radius: 50px;
+            background: #243757;
+            box-shadow:  20px 20px 60px #1c2a43,
+             -20px -20px 60px #2c446b;
+
+        }
+        & #email{
+            text-align: center;
+           border-radius: 50px;
+            background: #243757;
+            box-shadow:  20px 20px 60px #1c2a43,
+             -20px -20px 60px #2c446b;
+
+        }
+        & #botonReserva{
+            margin: auto;
+            width: 8em;
+            height: 2em;
+            border-radius: 50px;
+            background: #374d72;
+            box-shadow:  20px 20px 60px #1c2a43,
+                         -20px -20px 60px #2c446b;
+        }
+
+    }
 }
     
     

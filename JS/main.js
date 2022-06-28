@@ -10,8 +10,7 @@ button.addEventListener('click',() => {
 
 /* Simulador de reserva de habitacion */
 
-
-class Habitaciones {
+/*  class Habitaciones {
   constructor(tipo, precio) {
     this.tipo = tipo;
     this.precio = precio;
@@ -21,31 +20,48 @@ class Habitaciones {
 const habitacionSimple = new Habitaciones('Simple', 3500);
 const habitacionDoble = new Habitaciones('Doble', 3000);
 const habitacionTriple = new Habitaciones('Triple', 2500);
-const habitacionSuite = new Habitaciones('Suite', 4500);
+const habitacionSuite = new Habitaciones('Suite', 4500); */
 
-const habitHotel = [habitacionSimple, habitacionDoble, habitacionTriple, habitacionSuite];
+let habitacionSimple = {
+  nombre: 'Simple',
+  precio: 3500,
+} 
+let habitacionDoble = {
+  nombre: 'Doble',
+  precio: 3000,
+} 
+let habitacionTriple = {
+  nombre: 'Triple',
+  precio: 2500,
+} 
+let habitacionSuite = {
+  nombre: 'Suite',
+  precio: 4500,
+} 
 
-const botonReserva = document.getElementById("reserva__portada")
-botonReserva.onclick = function(){
-  let saludo = prompt("Bienvenido al Hotel BuenaVista, cual es su nombre?");
-  let nombre = alert("Muchas gracias por elegirnos " + saludo);
-  let habitaciones = prompt("Por favor, seleccione una habitación: " + habitHotel[0].tipo + ", " + habitHotel[1].tipo + ", " + habitHotel[2].tipo + ", " + habitHotel[3].tipo);
-  let noche = prompt("Por favor, seleccione la cantidad de noches que desea hospedarse");
-  
-  if (habitaciones == habitHotel[0].tipo) {
-    alert("Su habitación es: " + habitacionSimple.tipo + " y el precio es: " + habitacionSimple.precio * noche);  
-  }
-  else if (habitaciones == habitHotel[1].tipo) {
-    alert("Su habitación es: " + habitacionDoble.tipo + " y el precio es: " + habitacionDoble.precio * noche);
-  }
-  else if (habitaciones == habitHotel[2].tipo) {
-    alert("Su habitación es: " + habitacionTriple.tipo + " y el precio es: " + habitacionTriple.precio * noche);
-  }
-  else if (habitaciones == habitHotel[3].tipo) {
-    alert("Su habitación es: " + habitacionSuite.tipo + " y el precio es: " + habitacionSuite.precio * noche); 
-  }else {
-    alert("Por favor, seleccione una habitación válida");
-  }
+localStorage.setItem('habitacionSimple', JSON.stringify(habitacionSimple))
+localStorage.setItem('habitacionDoble', JSON.stringify(habitacionDoble))
+localStorage.setItem('habitacionTriple', JSON.stringify(habitacionTriple))
+localStorage.setItem('habitacionSuite', JSON.stringify(habitacionSuite))
 
-  let despedida = alert("Muchas gracias por elegirnos, que disfrutes tu estadía " + saludo);
+let reservaOk = function (){
+  let nombreReserva = document.getElementById("nombre").value;
+  let habitReserva = document.getElementById("habitaciones").value;
+  let nochesReserva = document.getElementById("noches").value;
+  let emailReserva = document.getElementById("email").value;
 }
+
+const botonReserva = document.getElementById("botonReserva");
+const formReserva = document.querySelector(".formActivo");
+
+botonReserva.addEventListener('click',() => {
+  let reservaLista = document.getElementById("reservaLista");
+  let reservaListaConfirm = document.createElement("p");
+  let textoParrafo = document.createTextNode("Muchas gracias por elegirnos. En instantes recibirá en su correo electrónico la confirmación de su reserva. Esperamos que disfrute su estadía.");
+  reservaLista.appendChild(textoParrafo);
+  formReserva.classList.toggle('formInactivo');
+}
+)
+
+
+

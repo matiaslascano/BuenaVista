@@ -38,7 +38,6 @@
 <main class="main">
     <div class="portada">
         <img class="main__portada" src="./assets/portada.jpg" alt="Imagen hotel portada">
-        <button id="reserva__portada">RESERVAS</button>
     </div>
     
 
@@ -87,11 +86,24 @@
 
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3405.434498828957!2d-64.50124518362733!3d-31.402152851928445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x942d667180832b5f%3A0xcba43693b8deb735!2sArranbide%2057%2C%20Villa%20Carlos%20Paz%2C%20C%C3%B3rdoba!5e0!3m2!1ses-419!2sar!4v1654781874307!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
-    <h2 class="h2" id="reservas">Reservas</h2>
+    <h2 class="h2"">Reservas</h2>
 
-    <div class="reservaOk">
-        
+    <div id="reservaLista">
+
     </div>
+
+    <form action="" id="formReserva" class="formActivo">
+        Nombre: <input type="text" name="cliente_nombre" id="nombre" placeholder="Nombre">
+        Habitación: <select name="habitaciones" id="habitaciones_lista">
+            <option value="simple">Simple</option>
+            <option value="doble">Doble</option>
+            <option value="triple">Triple</option>
+            <option value="suite">Suite</option>
+        </select>
+        Noches: <input type="number" id="noches" name="cliente_noches" placeholder="Noches">
+        Correo Electrónico: <input type="email" id="email" name="email" placeholder="Email">
+        <button type="button" id="botonReserva" onclick="reservaOk()">Enviar</button>
+    </form>
 
 
 
