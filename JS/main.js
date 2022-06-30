@@ -59,9 +59,9 @@ botonReserva.addEventListener('click',() => {
   let reservaListaConfirm = document.createElement("p");
   let textoParrafo = document.createTextNode("Muchas gracias por elegirnos. En instantes recibirá en su correo electrónico la confirmación de su reserva. Esperamos que disfrute su estadía.");
   reservaLista.appendChild(textoParrafo);
+}
+)
+botonReserva.addEventListener('click',() => {
   formReserva.classList.toggle('formInactivo');
 }
 )
-
-
-

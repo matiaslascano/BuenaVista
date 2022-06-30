@@ -6,8 +6,8 @@
     --color-secundario:#f0f0f0;
 
     /* Tipografía */
-    --tipo-principal: helvetica, arial, sans-serif;
-    --tipo-secundaria: verdana;
+    --tipo-principal: 'Montserrat', sans-serif;;
+    /* --tipo-secundaria: verdana; */
 }
 
 /* Adaptamos al modo oscuro */
@@ -110,7 +110,7 @@ body{
     min-height: 100vh;
     font-size: 100%;
     font-family: var(--tipo-principal);
-    color: #dad5b7 ;
+    color: white ;
     background-color: #243757;
     /* line-height:1.4em;
     hyphens: auto;
@@ -130,11 +130,9 @@ body{
     position: fixed;
     width: 100%;
     background: rgba(0,0,0, 0.1);
-  /*   border-radius: 16px; */
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
-    /* border: 1px solid rgba(255, 255, 255, 0.3); */
     padding: 1em;
     color: white;
     
@@ -197,9 +195,17 @@ body{
     &_li{
         text-shadow: #000000;
         margin: 0.5em;
+        &:hover{
+            text-decoration: underline;
+            color: #f0f0f0;
+        }
         @include media (){
             margin: 0.3em 0;
         }
+    }
+    & a:hover{
+        color:#f0f0f0;
+        transform: scale(1.2)
     }
 }
 
@@ -297,7 +303,7 @@ body{
         width: 90%;
         gap: 1em;
 
-        & .formInactivo{
+        &.formInactivo{
             display: none;
         }
         & #nombre{

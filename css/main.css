@@ -4,8 +4,8 @@
   --color-primario:black;
   --color-secundario:#f0f0f0;
   /* Tipografía */
-  --tipo-principal: helvetica, arial, sans-serif;
-  --tipo-secundaria: verdana;
+  --tipo-principal: 'Montserrat', sans-serif;
+  /* --tipo-secundaria: verdana; */
 }
 
 /* Adaptamos al modo oscuro */
@@ -130,7 +130,7 @@ body {
   min-height: 100vh;
   font-size: 100%;
   font-family: var(--tipo-principal);
-  color: #dad5b7;
+  color: white;
   background-color: #243757;
   /* line-height:1.4em;
     hyphens: auto;
@@ -148,12 +148,10 @@ body {
   position: fixed;
   width: 100%;
   background: rgba(0, 0, 0, 0.1);
-  /*   border-radius: 16px; */
   -webkit-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
           box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
-  /* border: 1px solid rgba(255, 255, 255, 0.3); */
   padding: 1em;
   color: white;
   z-index: 1;
@@ -258,10 +256,21 @@ body {
   margin: 0.5em;
 }
 
+.header_li:hover {
+  text-decoration: underline;
+  color: #f0f0f0;
+}
+
 @media screen and (max-width: 480px) {
   .header_li {
     margin: 0.3em 0;
   }
+}
+
+.header a:hover {
+  color: #f0f0f0;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 .main {
@@ -402,7 +411,7 @@ body {
   gap: 1em;
 }
 
-.main form .formInactivo {
+.main form.formInactivo {
   display: none;
 }
 
