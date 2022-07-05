@@ -1,119 +1,390 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hotel BuenaVista</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;500&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="./assets/logos/favicon.png" type="image/x-icon">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/main.css">
-    
-</head>
-<body>
-
-<header class="header">
-
-    <h1 class="header_h1">
-        <img src="./assets/logos/logo_transparent.png" alt="Logo Hotel">
-    </h1>
-    <button class="header_button">
-        <svg class="header_svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"  viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
-        </svg>
-    </button>
-    <nav class="header_nav">
-        <ul class="header_ul">
-            <li class="header_li"><a href="#" class="header_a">Home</a></li>
-            <li class="header_li"><a href="#habitaciones" class="header_a">Habitaciones</a></li>
-            <li class="header_li"><a href="#formReserva" class="header_a">Reservas</a></li>
-            <li class="header_li"><a href="#servicios" class="header_a">Servicios</a></li>
-            <li class="header_li"><a href="#ubicación" class="header_a">Ubicacion</a></li>
-            <li class="header_li"><a href="#" class="header_a">Contacto</a></li>
-        </ul>
-    </nav>
-
-</header>
-
-<main class="main">
-    <div class="portada">
-        <img class="main__portada" src="./assets/portada.jpg" alt="Imagen hotel portada">
-    </div>
-    
-
-
-    <h1 class="main_h1">Bienvenido al Hotel BuenaVista</h1>
-
-    <p class="main_p">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas dolor qui saepe corporis aliquam veritatis quaerat deserunt ipsum, iste itaque facere iusto voluptatem dolores, animi debitis laboriosam quis autem ratione!</p>
-
-    <h2 class="h2" id="habitaciones">Habitaciones</h2>
-
-    <div class="container">
-        <div class="galeria">
-            <div class="imagen"><img src="./assets/habitacion1.jpg" alt="Imagenes de Habitaciones" loading="lazy"></div>
-            <div class="imagen"><img src="./assets/habitacion2.jpg" alt="Imagenes de Habitaciones" loading="lazy"></div>
-            <div class="imagen"><img src="./assets/habitacion3.jpg" alt="Imagenes de Habitaciones" loading="lazy"></div>
-            <div class="imagen"><img src="./assets/habitacion4.jpg" alt="Imagenes de Habitaciones" loading="lazy"></div>
-            <div class="imagen"><img src="./assets/habitacion5.jpg" alt="Imagenes de Habitaciones" loading="lazy"></div>
-            <div class="imagen"><img src="./assets/habitacion6.jpg" alt="Imagenes de Habitaciones" loading="lazy"></div>
-        </div>
-    </div>
-
-    <h2 class="h2"">Reservas</h2>
-
-    <div id="reservaLista">
-
-    </div>
-
-    <form action="" id="formReserva" class="formActivo">
-        Nombre: <input type="text" name="cliente_nombre" id="nombre" placeholder="Nombre">
-        Habitación: <select name="habitaciones" id="habitaciones_lista">
-            <option value="simple">Simple</option>
-            <option value="doble">Doble</option>
-            <option value="triple">Triple</option>
-            <option value="suite">Suite</option>
-        </select>
-        Noches: <input type="number" id="noches" name="cliente_noches" placeholder="Noches">
-        Correo Electrónico: <input type="email" id="email" name="email" placeholder="Email">
-        <button type="button" id="botonReserva" onclick="reservaOk()">Enviar</button>
-    </form>
-
-
-    <h2 class="h2" id="servicios">Servicios</h2>
-
-    <div class="container_servicios">
-        <div class="card" style="width: 18rem;">
-            <img src="./assets/tinywow_resize_2999896.jpg" class="card-img-top" alt="Fotos de Servicios">
-            <div class="card">
-                <p class="card__texto">Servicio de Buffet Continental.</p>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Hotel BuenaVista</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="main.css">
+        <script src="https://kit.fontawesome.com/dbed6b6114.js" crossorigin="anonymous"></script>
+        <link rel = "icon" href = "./assets/logos/favicon.png" type = "image/png">
+    </head>
+    <body>
+        
+        <!-- header -->
+        <header class = "header" id = "header">
+            <div class = "head-top">
+                <div class = "site-name">
+                    <img class="logo" src="./assets/logos/logo_transparent.png" alt="">
+                </div>
+                <div class = "site-nav">
+                    <span id = "nav-btn">MENU <i class = "fas fa-bars"></i></span>
+                </div>
             </div>
-        </div>
-        <div class="card" style="width: 18rem;">
-            <img src="./assets/servicios2.jpg" class="card-img-top" alt="Fotos de Servicios">
-            <div class="card-body">
-                <p class="card-text">Pileta con bar, pileta climatizada, sauna y Spa.</p>
+
+            <div class = "head-bottom flex">
+                <h2>EL MEJOR LUGAR PARA HOSPEDARSE CON TU FAMILIA</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto est quos veniam impedit numquam itaque voluptatum, dicta asperiores accusamus, eligendi neque ut incidunt, modi harum molestiae atque natus officia minima.</p>
+                <button type = "button" class = "head-btn" href="#reservas">RESERVAS</button>
             </div>
+        </header>
+        <!-- end of header -->
+
+        <!-- side navbar -->
+        <div class = "sidenav" id = "sidenav">
+            <span class = "cancel-btn" id = "cancel-btn">
+                <i class = "fas fa-times"></i>
+            </span>
+
+            <ul class = "navbar">
+                <li><a href = "#header">Home</a></li>
+                <li><a href = "#servicios">Servicios</a></li>
+                <li><a href = "#habitaciones">Habitaciones</a></li>
+                <li><a href = "#clientes">Clientes</a></li>
+            </ul>
+          
         </div>
-        <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <!-- end of side navbar -->
+
+        <!-- fullscreen modal -->
+        <div id = "modal"></div>
+        <!-- end of fullscreen modal -->
+
+        <!-- body content  -->
+        <section class = "services sec-width" id = "servicios">
+            <div class = "title">
+                <h2>Servicios</h2>
             </div>
+            <div class = "services-container">
+                <!-- single service -->
+                <article class = "service">
+                    <div class = "service-icon">
+                        <span>
+                            <i class = "fas fa-utensils"></i>
+                        </span>
+                    </div>
+                    <div class = "service-content">
+                        <h2>Servicio de Comidas</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias blanditiis tempore officia accusamus asperiores. Illum maxime eligendi necessitatibus laudantium iste nisi pariatur doloremque ut illo similique voluptatum enim distinctio perferendis, ad ipsam aspernatur omnis rem autem ex, reiciendis corporis suscipit!</p>
+                        <button type = "button" class = "btn">Saber más</button>
+                    </div>
+                </article>
+                <!-- end of single service -->
+                <!-- single service -->
+                <article class = "service">
+                    <div class = "service-icon">
+                        <span>
+                            <i class = "fas fa-swimming-pool"></i>
+                        </span>
+                    </div>
+                    <div class = "service-content">
+                        <h2>Piscinas</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias blanditiis tempore officia accusamus asperiores. Illum maxime eligendi necessitatibus laudantium iste nisi pariatur doloremque ut illo similique voluptatum enim distinctio perferendis, ad ipsam aspernatur omnis rem autem ex, reiciendis corporis suscipit!</p>
+                        <button type = "button" class = "btn">Saber más</button>
+                    </div>
+                </article>
+                <!-- end of single service -->
+                <!-- single service -->
+                <article class = "service">
+                    <div class = "service-icon">
+                        <span>
+                            <i class = "fas fa-broom"></i>
+                        </span>
+                    </div>
+                    <div class = "service-content">
+                        <h2>Limpieza de Habitaciones</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias blanditiis tempore officia accusamus asperiores. Illum maxime eligendi necessitatibus laudantium iste nisi pariatur doloremque ut illo similique voluptatum enim distinctio perferendis, ad ipsam aspernatur omnis rem autem ex, reiciendis corporis suscipit!</p>
+                        <button type = "button" class = "btn">Saber más</button>
+                    </div>
+                </article>
+                <!-- end of single service -->
+                <!-- single service -->
+                <article class = "service">
+                    <div class = "service-icon">
+                        <span>
+                            <i class = "fas fa-door-closed"></i>
+                        </span>
+                    </div>
+                    <div class = "service-content">
+                        <h2>Seguridad</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias blanditiis tempore officia accusamus asperiores. Illum maxime eligendi necessitatibus laudantium iste nisi pariatur doloremque ut illo similique voluptatum enim distinctio perferendis, ad ipsam aspernatur omnis rem autem ex, reiciendis corporis suscipit!</p>
+                        <button type = "button" class = "btn">Saber más</button>
+                    </div>
+                </article>
+                <!-- end of single service -->
+            </div>
+        </section>
+
+        <div class = "book">
+            <form class = "book-form" id="reservas">
+                <div class = "form-item">
+                    <label for = "checkin-date">Fecha de ingreso: </label>
+                    <input type = "date" id = "fecha-ingreso">
+                </div>
+                <div class = "form-item">
+                    <label for = "checkout-date">Fecha de salida: </label>
+                    <input type = "date" id = "fecha-salida">
+                </div>
+                <div class = "form-item">
+                    <label for = "adult">Adultos: </label>
+                    <input type = "number" min = "1" value = "1" id = "adulto">
+                </div>
+                <div class = "form-item">
+                    <label for = "children">Niños: </label>
+                    <input type = "number" min = "1" value = "1" id = "niño">
+                </div>
+                <div class = "form-item">
+                    <label for = "rooms">Habitaciones: </label>
+                    <input type = "number" min = "1" value = "1" id = "habitacion">
+                </div>
+                <div class = "form-item">
+                    <input type = "submit" class = "btn" value = "Reservar">
+                </div>
+            </form>
         </div>
-    </div>
 
-    <h2 class="h2" id="ubicación">Ubicación</h2>
+        <section class = "rooms sec-width" id = "habitaciones">
+            <div class = "title">
+                <h2>Habitaciones</h2>
+            </div>
+            <div class = "rooms-container">
+                <!-- single room -->
+                <article class = "room">
+                    <div class = "room-image">
+                        <img src = "./assets/habitacion1.jpg" alt = "room image">
+                    </div>
+                    <div class = "room-text">
+                        <h3>Habitación Suite</h3>
+                        <ul>
+                            <li>
+                                <i class = "fas fa-arrow-alt-circle-right"></i>
+                                Lorem ipsum dolor sit amet.
+                            </li>
+                            <li>
+                                <i class = "fas fa-arrow-alt-circle-right"></i>
+                                Lorem ipsum dolor sit amet.
+                            </li>
+                            <li>
+                                <i class = "fas fa-arrow-alt-circle-right"></i>
+                                Lorem ipsum dolor sit amet.
+                            </li>
+                        </ul>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus exercitationem repellendus maxime ullam tempore architecto provident unde expedita quam beatae, dolore eligendi molestias sint tenetur incidunt voluptas. Unde corporis qui iusto vitae. Aut nesciunt id iste, cum esse commodi nemo?</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla corporis quasi officiis cumque, fugiat nostrum sunt, tempora animi dicta laborum beatae ratione doloremque. Delectus odio sit eius labore, atque quo?</p>
+                        <p class = "rate">
+                            <span>$4500 /</span> Por Noche
+                        </p>
+                        <button type = "button" class = "btn">Reservar</button>
+                    </div>
+                </article>
+                <!-- end of single room -->
+                <!-- single room -->
+                <article class = "room">
+                    <div class = "room-image">
+                        <img src = "./assets/habitacion2.jpg" alt = "room image">
+                    </div>
+                    <div class = "room-text">
+                        <h3>Habitación Simple</h3>
+                        <ul>
+                            <li>
+                                <i class = "fas fa-arrow-alt-circle-right"></i>
+                                Lorem ipsum dolor sit amet.
+                            </li>
+                            <li>
+                                <i class = "fas fa-arrow-alt-circle-right"></i>
+                                Lorem ipsum dolor sit amet.
+                            </li>
+                            <li>
+                                <i class = "fas fa-arrow-alt-circle-right"></i>
+                                Lorem ipsum dolor sit amet.
+                            </li>
+                        </ul>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus exercitationem repellendus maxime ullam tempore architecto provident unde expedita quam beatae, dolore eligendi molestias sint tenetur incidunt voluptas. Unde corporis qui iusto vitae. Aut nesciunt id iste, cum esse commodi nemo?</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla corporis quasi officiis cumque, fugiat nostrum sunt, tempora animi dicta laborum beatae ratione doloremque. Delectus odio sit eius labore, atque quo?</p>
+                        <p class = "rate">
+                            <span>$3500 /</span> Por Noche
+                        </p>
+                        <button type = "button" class = "btn">Reservar</button>
+                    </div>
+                </article>
+                <!-- end of single room -->
+                <!-- single room -->
+                <article class = "room">
+                    <div class = "room-image">
+                        <img src = "./assets/habitacion3.jpg" alt = "room image">
+                    </div>
+                    <div class = "room-text">
+                        <h3>Habitación Doble</h3>
+                        <ul>
+                            <li>
+                                <i class = "fas fa-arrow-alt-circle-right"></i>
+                                Lorem ipsum dolor sit amet.
+                            </li>
+                            <li>
+                                <i class = "fas fa-arrow-alt-circle-right"></i>
+                                Lorem ipsum dolor sit amet.
+                            </li>
+                            <li>
+                                <i class = "fas fa-arrow-alt-circle-right"></i>
+                                Lorem ipsum dolor sit amet.
+                            </li>
+                        </ul>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus exercitationem repellendus maxime ullam tempore architecto provident unde expedita quam beatae, dolore eligendi molestias sint tenetur incidunt voluptas. Unde corporis qui iusto vitae. Aut nesciunt id iste, cum esse commodi nemo?</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla corporis quasi officiis cumque, fugiat nostrum sunt, tempora animi dicta laborum beatae ratione doloremque. Delectus odio sit eius labore, atque quo?</p>
+                        <p class = "rate">
+                            <span>$3000 /</span> Por Noche
+                        </p>
+                        <button type = "button" class = "btn">Reservar</button>
+                    </div>
+                </article>
+                <!-- end of single room -->
+                <!-- single room -->
+                <article class = "room">
+                    <div class = "room-image">
+                        <img src = "./assets/habitacion4.jpg" alt = "room image">
+                    </div>
+                    <div class = "room-text">
+                        <h3>Habitación Triple</h3>
+                        <ul>
+                            <li>
+                                <i class = "fas fa-arrow-alt-circle-right"></i>
+                                Lorem ipsum dolor sit amet.
+                            </li>
+                            <li>
+                                <i class = "fas fa-arrow-alt-circle-right"></i>
+                                Lorem ipsum dolor sit amet.
+                            </li>
+                            <li>
+                                <i class = "fas fa-arrow-alt-circle-right"></i>
+                                Lorem ipsum dolor sit amet.
+                            </li>
+                        </ul>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus exercitationem repellendus maxime ullam tempore architecto provident unde expedita quam beatae, dolore eligendi molestias sint tenetur incidunt voluptas. Unde corporis qui iusto vitae. Aut nesciunt id iste, cum esse commodi nemo?</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla corporis quasi officiis cumque, fugiat nostrum sunt, tempora animi dicta laborum beatae ratione doloremque. Delectus odio sit eius labore, atque quo?</p>
+                        <p class = "rate">
+                            <span>$2500 /</span> Por Noche
+                        </p>
+                        <button type = "button" class = "btn">Reservar</button>
+                    </div>
+                </article>
+                <!-- end of single room -->
+            </div>
+        </section>
 
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3405.434498828957!2d-64.50124518362733!3d-31.402152851928445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x942d667180832b5f%3A0xcba43693b8deb735!2sArranbide%2057%2C%20Villa%20Carlos%20Paz%2C%20C%C3%B3rdoba!5e0!3m2!1ses-419!2sar!4v1654781874307!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
-    
+        <section class = "customers" id = "customers">
+            <div class = "sec-width">
+                <div class = "title">
+                    <h2>Clientes</h2>
+                </div>
+                <div class = "customers-container">
+                    <!-- single customer -->
+                    <div class = "customer">
+                        <div class = "rating">
+                            <span><i class = "fas fa-star"></i></span>
+                            <span><i class = "fas fa-star"></i></span>
+                            <span><i class = "fas fa-star"></i></span>
+                            <span><i class = "fas fa-star"></i></span>
+                            <span><i class = "far fa-star"></i></span>
+                        </div>
+                        <h3>Nos encantó</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat beatae veritatis provident eveniet praesentium veniam cum iusto distinctio esse, vero est autem, eius optio cupiditate?</p>
+                        <img src = "./assets/cliente1.jpg" alt = "customer image">
+                        <span>Pepe Lopez</span>
+                    </div>
+                    <!-- end of single customer -->
+                    <!-- single customer -->
+                    <div class = "customer">
+                        <div class = "rating">
+                            <span><i class = "fas fa-star"></i></span>
+                            <span><i class = "fas fa-star"></i></span>
+                            <span><i class = "fas fa-star"></i></span>
+                            <span><i class = "fas fa-star"></i></span>
+                            <span><i class = "far fa-star"></i></span>
+                        </div>
+                        <h3>Un lugar muy confortable</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat beatae veritatis provident eveniet praesentium veniam cum iusto distinctio esse, vero est autem, eius optio cupiditate?</p>
+                        <img src = "assets/cliente2.jpg" alt = "customer image">
+                        <span>Matias Lascano</span>
+                    </div>
+                    <!-- end of single customer -->
+                    <!-- single customer -->
+                    <div class = "customer">
+                        <div class = "rating">
+                            <span><i class = "fas fa-star"></i></span>
+                            <span><i class = "fas fa-star"></i></span>
+                            <span><i class = "fas fa-star"></i></span>
+                            <span><i class = "fas fa-star"></i></span>
+                            <span><i class = "far fa-star"></i></span>
+                        </div>
+                        <h3>Hermoso lugar, lo recomiendo</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat beatae veritatis provident eveniet praesentium veniam cum iusto distinctio esse, vero est autem, eius optio cupiditate?</p>
+                        <img src = "./assets/cliente3.jpg" alt = "customer image">
+                        <span>Sara Martinez</span>
+                    </div>
+                    <!-- end of single customer -->
+                </div>
+            </div>
+        </section>
+        <!-- end of body content -->
+        
+        <!-- footer -->
+        <footer class = "footer">
+            <div class = "footer-container">
+                <div>
+                    <h2>Acerca de nosotros </h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque sapiente mollitia doloribus provident? Eos quisquam aliquid vel dolorum, impedit culpa.</p>
+                    <ul class = "social-icons">
+                        <li class = "flex">
+                            <i class = "fa fa-twitter fa-2x"></i>
+                        </li>
+                        <li class = "flex">
+                            <i class = "fa fa-facebook fa-2x"></i>
+                        </li>
+                        <li class = "flex">
+                            <i class = "fa fa-instagram fa-2x"></i>
+                        </li>
+                    </ul>
+                </div>
 
+                <div>
+                    <h2>Links</h2>
+                    <a href = "#home">Home</a>
+                    <a href = "#servicios">Servicios</a>
+                    <a href = "#habitaciones">Habitaciones</a>
+                    <a href = "#clientes">Clientes</a>
+                </div>
 
-</main>
-<script defer src="./JS/main.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>    
-</body>
+                <div>
+                    <h2>Contacto</h2>
+                    <div class = "contact-item">
+                        <span>
+                            <i class = "fas fa-map-marker-alt"></i>
+                        </span>
+                        <span>
+                            Arranbide 57, Villa Carlos Paz, Córdoba
+                        </span>
+                    </div>
+                    <div class = "contact-item">
+                        <span>
+                            <i class = "fas fa-phone-alt"></i>
+                        </span>
+                        <span>
+                            +54 3541 4888888
+                        </span>
+                    </div>
+                    <div class = "contact-item">
+                        <span>
+                            <i class = "fas fa-envelope"></i>
+                        </span>
+                        <span>
+                            contacto@hotelbuenavista.com
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- end of footer -->
+        
+        <script src="script.js"></script>
+    </body>
 </html>
