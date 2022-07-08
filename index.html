@@ -4,6 +4,9 @@
         <meta charset="utf-8">
         <title>Hotel BuenaVista</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="main.css">
         <script src="https://kit.fontawesome.com/dbed6b6114.js" crossorigin="anonymous"></script>
         <link rel = "icon" href = "./assets/logos/favicon.png" type = "image/png">
@@ -24,12 +27,10 @@
             <div class = "head-bottom flex">
                 <h2>EL MEJOR LUGAR PARA HOSPEDARSE CON TU FAMILIA</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto est quos veniam impedit numquam itaque voluptatum, dicta asperiores accusamus, eligendi neque ut incidunt, modi harum molestiae atque natus officia minima.</p>
-                <button type = "button" class = "head-btn" href="#reservas">RESERVAS</button>
+                <button type = "button" class = "head-btn">RESERVAS</button>
             </div>
         </header>
-        <!-- end of header -->
-
-        <!-- side navbar -->
+     <!-- navbar -->
         <div class = "sidenav" id = "sidenav">
             <span class = "cancel-btn" id = "cancel-btn">
                 <i class = "fas fa-times"></i>
@@ -43,19 +44,16 @@
             </ul>
           
         </div>
-        <!-- end of side navbar -->
-
-        <!-- fullscreen modal -->
+ 
         <div id = "modal"></div>
-        <!-- end of fullscreen modal -->
 
-        <!-- body content  -->
+
+        <!-- body -->
         <section class = "services sec-width" id = "servicios">
             <div class = "title">
                 <h2>Servicios</h2>
             </div>
             <div class = "services-container">
-                <!-- single service -->
                 <article class = "service">
                     <div class = "service-icon">
                         <span>
@@ -68,8 +66,7 @@
                         <button type = "button" class = "btn">Saber más</button>
                     </div>
                 </article>
-                <!-- end of single service -->
-                <!-- single service -->
+
                 <article class = "service">
                     <div class = "service-icon">
                         <span>
@@ -82,8 +79,7 @@
                         <button type = "button" class = "btn">Saber más</button>
                     </div>
                 </article>
-                <!-- end of single service -->
-                <!-- single service -->
+
                 <article class = "service">
                     <div class = "service-icon">
                         <span>
@@ -96,8 +92,7 @@
                         <button type = "button" class = "btn">Saber más</button>
                     </div>
                 </article>
-                <!-- end of single service -->
-                <!-- single service -->
+
                 <article class = "service">
                     <div class = "service-icon">
                         <span>
@@ -110,7 +105,7 @@
                         <button type = "button" class = "btn">Saber más</button>
                     </div>
                 </article>
-                <!-- end of single service -->
+
             </div>
         </section>
 
@@ -130,14 +125,20 @@
                 </div>
                 <div class = "form-item">
                     <label for = "children">Niños: </label>
-                    <input type = "number" min = "1" value = "1" id = "niño">
+                    <input type = "number" min = "0" value = "" id = "niño">
                 </div>
                 <div class = "form-item">
                     <label for = "rooms">Habitaciones: </label>
-                    <input type = "number" min = "1" value = "1" id = "habitacion">
+                    <select id="habitacion" name="habitacion">
+                        <option value="" selected="selected">- selecciona -</option>
+                        <option value="Suite">Suite</option>
+                        <option value="Triple">Triple</option>
+                        <option value="Doble">Doble</option>
+                        <option value="Simple">Simple</option>
+                      </select>
                 </div>
-                <div class = "form-item">
-                    <input type = "submit" class = "btn" value = "Reservar">
+                <div class="form-item">
+                    <button type="button" class = "btn" id = "reservar" onclick="capturarForm()">Reservar</button>
                 </div>
             </form>
         </div>
@@ -147,7 +148,7 @@
                 <h2>Habitaciones</h2>
             </div>
             <div class = "rooms-container">
-                <!-- single room -->
+
                 <article class = "room">
                     <div class = "room-image">
                         <img src = "./assets/habitacion1.jpg" alt = "room image">
@@ -176,8 +177,7 @@
                         <button type = "button" class = "btn">Reservar</button>
                     </div>
                 </article>
-                <!-- end of single room -->
-                <!-- single room -->
+
                 <article class = "room">
                     <div class = "room-image">
                         <img src = "./assets/habitacion2.jpg" alt = "room image">
@@ -206,8 +206,7 @@
                         <button type = "button" class = "btn">Reservar</button>
                     </div>
                 </article>
-                <!-- end of single room -->
-                <!-- single room -->
+
                 <article class = "room">
                     <div class = "room-image">
                         <img src = "./assets/habitacion3.jpg" alt = "room image">
@@ -236,8 +235,7 @@
                         <button type = "button" class = "btn">Reservar</button>
                     </div>
                 </article>
-                <!-- end of single room -->
-                <!-- single room -->
+
                 <article class = "room">
                     <div class = "room-image">
                         <img src = "./assets/habitacion4.jpg" alt = "room image">
@@ -266,7 +264,7 @@
                         <button type = "button" class = "btn">Reservar</button>
                     </div>
                 </article>
-                <!-- end of single room -->
+
             </div>
         </section>
 
@@ -277,7 +275,7 @@
                     <h2>Clientes</h2>
                 </div>
                 <div class = "customers-container">
-                    <!-- single customer -->
+
                     <div class = "customer">
                         <div class = "rating">
                             <span><i class = "fas fa-star"></i></span>
@@ -291,8 +289,7 @@
                         <img src = "./assets/cliente1.jpg" alt = "customer image">
                         <span>Pepe Lopez</span>
                     </div>
-                    <!-- end of single customer -->
-                    <!-- single customer -->
+
                     <div class = "customer">
                         <div class = "rating">
                             <span><i class = "fas fa-star"></i></span>
@@ -306,8 +303,7 @@
                         <img src = "assets/cliente2.jpg" alt = "customer image">
                         <span>Matias Lascano</span>
                     </div>
-                    <!-- end of single customer -->
-                    <!-- single customer -->
+
                     <div class = "customer">
                         <div class = "rating">
                             <span><i class = "fas fa-star"></i></span>
@@ -320,12 +316,11 @@
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat beatae veritatis provident eveniet praesentium veniam cum iusto distinctio esse, vero est autem, eius optio cupiditate?</p>
                         <img src = "./assets/cliente3.jpg" alt = "customer image">
                         <span>Sara Martinez</span>
-                    </div>
-                    <!-- end of single customer -->
+
                 </div>
             </div>
         </section>
-        <!-- end of body content -->
+
         
         <!-- footer -->
         <footer class = "footer">
@@ -383,8 +378,11 @@
                 </div>
             </div>
         </footer>
-        <!-- end of footer -->
+
         
         <script src="script.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="https://momentjs.com/downloads/moment.min.js"></script>
     </body>
 </html>
+
