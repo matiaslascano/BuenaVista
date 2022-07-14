@@ -26,8 +26,8 @@
 
             <div class = "head-bottom flex">
                 <h2>EL MEJOR LUGAR PARA HOSPEDARSE CON TU FAMILIA</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto est quos veniam impedit numquam itaque voluptatum, dicta asperiores accusamus, eligendi neque ut incidunt, modi harum molestiae atque natus officia minima.</p>
-                <button type = "button" class = "head-btn">RESERVAS</button>
+                <p>Ubicado en las Sierras de Córdoba, Hotel BuenaVista es un excelente hotel familiar. Aquí podrá disfrutar de un retiro en la montaña, completo con actividades tanto para adultos como para niños.</p>
+                <button type = "button" class = "head-btn"><a href="#reservar">RESERVAS</a></button>
             </div>
         </header>
      <!-- navbar -->
@@ -49,67 +49,19 @@
 
 
         <!-- body -->
-        <section class = "services sec-width" id = "servicios">
+
+        <div class="container-boton">
+            <a href="https://wa.me/5493514084026? target="_blank">
+                <img class="boton" src="./assets/icono.png" alt="">
+            </a>
+        </div>
+
+        
+
+        <div class = "book" id = reservar>
             <div class = "title">
-                <h2>Servicios</h2>
+                <h2>Reservas</h2>
             </div>
-            <div class = "services-container">
-                <article class = "service">
-                    <div class = "service-icon">
-                        <span>
-                            <i class = "fas fa-utensils"></i>
-                        </span>
-                    </div>
-                    <div class = "service-content">
-                        <h2>Servicio de Comidas</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias blanditiis tempore officia accusamus asperiores. Illum maxime eligendi necessitatibus laudantium iste nisi pariatur doloremque ut illo similique voluptatum enim distinctio perferendis, ad ipsam aspernatur omnis rem autem ex, reiciendis corporis suscipit!</p>
-                        <button type = "button" class = "btn">Saber más</button>
-                    </div>
-                </article>
-
-                <article class = "service">
-                    <div class = "service-icon">
-                        <span>
-                            <i class = "fas fa-swimming-pool"></i>
-                        </span>
-                    </div>
-                    <div class = "service-content">
-                        <h2>Piscinas</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias blanditiis tempore officia accusamus asperiores. Illum maxime eligendi necessitatibus laudantium iste nisi pariatur doloremque ut illo similique voluptatum enim distinctio perferendis, ad ipsam aspernatur omnis rem autem ex, reiciendis corporis suscipit!</p>
-                        <button type = "button" class = "btn">Saber más</button>
-                    </div>
-                </article>
-
-                <article class = "service">
-                    <div class = "service-icon">
-                        <span>
-                            <i class = "fas fa-broom"></i>
-                        </span>
-                    </div>
-                    <div class = "service-content">
-                        <h2>Limpieza de Habitaciones</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias blanditiis tempore officia accusamus asperiores. Illum maxime eligendi necessitatibus laudantium iste nisi pariatur doloremque ut illo similique voluptatum enim distinctio perferendis, ad ipsam aspernatur omnis rem autem ex, reiciendis corporis suscipit!</p>
-                        <button type = "button" class = "btn">Saber más</button>
-                    </div>
-                </article>
-
-                <article class = "service">
-                    <div class = "service-icon">
-                        <span>
-                            <i class = "fas fa-door-closed"></i>
-                        </span>
-                    </div>
-                    <div class = "service-content">
-                        <h2>Seguridad</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias blanditiis tempore officia accusamus asperiores. Illum maxime eligendi necessitatibus laudantium iste nisi pariatur doloremque ut illo similique voluptatum enim distinctio perferendis, ad ipsam aspernatur omnis rem autem ex, reiciendis corporis suscipit!</p>
-                        <button type = "button" class = "btn">Saber más</button>
-                    </div>
-                </article>
-
-            </div>
-        </section>
-
-        <div class = "book">
             <form class = "book-form" id="reservas">
                 <div class = "form-item">
                     <label for = "checkin-date">Fecha de ingreso: </label>
@@ -138,10 +90,72 @@
                       </select>
                 </div>
                 <div class="form-item">
-                    <button type="button" class = "btn" id = "reservar" onclick="capturarForm()">Reservar</button>
+                    <button type="submit" class = "btn" id = "reservar" onclick="capturarForm()">Reservar</button>
                 </div>
             </form>
         </div>
+
+        <section class = "services sec-width" id = "servicios">
+            <div class = "title">
+                <h2>Servicios</h2>
+            </div>
+            <div class = "services-container">
+                <article class = "service">
+                    <div class = "service-icon">
+                        <span>
+                            <i class = "fas fa-utensils"></i>
+                        </span>
+                    </div>
+                    <div class = "service-content">
+                        <h2>Servicio de Comidas</h2>
+                        <p>Tendras a tu disposición una amplia variedad de comidas. Con menúes especiales para veganos, celíacos y para los niños.</p>
+                        <button type = "button" class = "btn">Saber más</button>
+                    </div>
+                </article>
+
+                <article class = "service">
+                    <div class = "service-icon">
+                        <span>
+                            <i class = "fas fa-swimming-pool"></i>
+                        </span>
+                    </div>
+                    <div class = "service-content">
+                        <h2>Piscinas</h2>
+                        <p>Ofrecemos excelentes instalaciones, como una piscina exterior climatizada con tobogán, un amplio spa y centro de bienestar, y una amplia gama de actividades para niños. ¡También amamos a las mascotas!</p>
+                        <button type = "button" class = "btn">Saber más</button>
+                    </div>
+                </article>
+
+                <article class = "service">
+                    <div class = "service-icon">
+                        <span>
+                            <i class = "fas fa-broom"></i>
+                        </span>
+                    </div>
+                    <div class = "service-content">
+                        <h2>Limpieza de Habitaciones</h2>
+                        <p>Ofrecemos un servicio de limpieza en la habitación diario. Nuestras colaboradoras estan pendietes de cada detalle para tu mayor confort y comodidad. Tambien contamos con servicio de lavandería, para que no tengas que preocuparte por nada.</p>
+                        <button type = "button" class = "btn">Saber más</button>
+                    </div>
+                </article>
+
+                <article class = "service">
+                    <div class = "service-icon">
+                        <span>
+                            <i class = "fas fa-door-closed"></i>
+                        </span>
+                    </div>
+                    <div class = "service-content">
+                        <h2>Seguridad</h2>
+                        <p>Seguridad las 24 hs en todo el establecimiento. Contacto directo con la policia local. También dispones de una caja fuerte en la habitación, para que tus pertenencias se encuentren a resguardo durante tota la estadía.</p>
+                        <button type = "button" class = "btn">Saber más</button>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+
 
         <section class = "rooms sec-width" id = "habitaciones">
             <div class = "title">
@@ -174,7 +188,7 @@
                         <p class = "rate">
                             <span>$4500 /</span> Por Noche
                         </p>
-                        <button type = "button" class = "btn">Reservar</button>
+                        <button type = "button" class = "btn"><a href="#reservar">RESERVAS</a></button>
                     </div>
                 </article>
 
@@ -203,7 +217,7 @@
                         <p class = "rate">
                             <span>$3500 /</span> Por Noche
                         </p>
-                        <button type = "button" class = "btn">Reservar</button>
+                        <button type = "button" class = "btn"><a href="#reservar">RESERVAS</a></button>
                     </div>
                 </article>
 
@@ -232,7 +246,7 @@
                         <p class = "rate">
                             <span>$3000 /</span> Por Noche
                         </p>
-                        <button type = "button" class = "btn">Reservar</button>
+                        <button type = "button" class = "btn"><a href="#reservar">RESERVAS</a></button>
                     </div>
                 </article>
 
@@ -261,7 +275,7 @@
                         <p class = "rate">
                             <span>$2500 /</span> Por Noche
                         </p>
-                        <button type = "button" class = "btn">Reservar</button>
+                        <button type = "button" class = "btn"><a href="#reservar">RESERVAS</a></button>
                     </div>
                 </article>
 
@@ -269,7 +283,7 @@
         </section>
 
 
-        <section class = "customers" id = "customers">
+        <section class = "customers" id = "clientes">
             <div class = "sec-width">
                 <div class = "title">
                     <h2>Clientes</h2>
@@ -343,7 +357,7 @@
 
                 <div>
                     <h2>Links</h2>
-                    <a href = "#home">Home</a>
+                    <a href = "#header">Home</a>
                     <a href = "#servicios">Servicios</a>
                     <a href = "#habitaciones">Habitaciones</a>
                     <a href = "#clientes">Clientes</a>
@@ -380,7 +394,9 @@
         </footer>
 
         
-        <script src="script.js"></script>
+        <script src="./js/script.js"></script>
+        <script src="./js/menuDesplegable.js"></script>
+        <script src="./js/enviarFormulario.js"></script>
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="https://momentjs.com/downloads/moment.min.js"></script>
     </body>

@@ -13,46 +13,10 @@ const habitSuite = new Habitaciones ("Suite", 4500)
 const listaHabitaciones = []
 listaHabitaciones.push(Habitaciones)
 
-const navBtn = document.getElementById('nav-btn');
-const cancelBtn = document.getElementById('cancel-btn');
-const sideNav = document.getElementById('sidenav');
-const modal = document.getElementById('modal');
 
-
-navBtn.addEventListener("click", function(){
-    sideNav.classList.add('show');
-    modal.classList.add('showModal');
-});
-
-cancelBtn.addEventListener('click', function(){
-    sideNav.classList.remove('show');
-    modal.classList.remove('showModal');
-});
-
-window.addEventListener('click', function(event){
-    if(event.target === modal){
-        sideNav.classList.remove('show');
-        modal.classList.remove('showModal');
-    }
-});
 
 const reservaBtn = document.getElementById('reservar')
 
-reservaBtn.addEventListener("click", function(){
-    Swal.fire({
-        title: '¿Desea confirmar su reserva?',
-        showDenyButton: true,
-        showCancelButton: true,
-        confirmButtonText: 'Si',
-        denyButtonText: `No`,
-      }).then((result) => {
-        if (result.isConfirmed) {
-          Swal.fire('Reserva confirmada. Muchas gracias.', '', 'success')
-        } else if (result.isDenied) {
-          Swal.fire('Los datos no fueron confirmados', '', 'info')
-        }
-      })
-})
 
 function capturarForm(){
     const fechaIngreso ="Ingreso: " + document.getElementById('fecha-ingreso').value;
@@ -66,6 +30,10 @@ function capturarForm(){
     let diasTranscurridos = Math.round(milisegundosTranscurridos/milisegundosDias);
     console.log(diasTranscurridos); 
 } 
+/* 
+https://formspree.io/f/mjvlqqrq */
+
+
 
 
 
