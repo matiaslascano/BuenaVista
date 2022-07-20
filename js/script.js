@@ -30,8 +30,7 @@ function capturarForm(){
     let diasTranscurridos = Math.round(milisegundosTranscurridos/milisegundosDias);
     console.log(diasTranscurridos); 
 } 
-/* 
-https://formspree.io/f/mjvlqqrq */
+
 
 
 
